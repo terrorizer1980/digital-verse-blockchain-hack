@@ -35,7 +35,7 @@ Our contract has all needed basic functions to work with NFT tokens:
 
 {server} = 165.22.72.149:49160 
 
-- **{server}/create_nft** 
+- **{server}/create_{eth}_nft** 
 
     Allows you to mint a NFT token
 
