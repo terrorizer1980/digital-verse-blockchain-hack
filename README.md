@@ -19,7 +19,10 @@ Recommends for good results: upload small videos (5-20 seconds long), keep your 
 ## Deployed smart contracts
 
 - ./contracts/solidity/ - path
-- https://testnet.hecoinfo.com/address/0x1d2a0ba44f522de56bf8fa83c312b8bdacfc20eb - info
+- https://mumbai.polygonscan.com/token/0x0decb8cf7834f0f7f4c502b4341898ef81143e27
+- https://explorer.testnet.near.org/accounts/aurora
+- https://rinkeby.etherscan.io/address/0xbf1550d38fadc10afa665c0f4bda3ca0dc77bdbb
+- https://testnet.hecoinfo.com/address/0x1d2a0ba44f522de56bf8fa83c312b8bdacfc20eb
 
 Our contract has all needed basic functions to work with NFT tokens:
 
