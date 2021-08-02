@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  server:
+    restart: always
+    build: ./server
+    ports:
+      - 49160:8080
+    env_file:
+      - ./server/config.env
+    volumes:
+      - ./tests/test.mov:/go/src/DigitalVerse/videos/test.mov
