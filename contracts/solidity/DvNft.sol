@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT OR Apache-2.0
 pragma solidity ^0.8.2;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.2.0/contracts/token/ERC721/ERC721.sol";
@@ -12,10 +12,12 @@ contract DigitalVerse is ERC721, ERC721URIStorage, AccessControl {
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
+    address contractAddress;
 
-    constructor() ERC721("DigitalVerse", "DVC") {
+    constructor(address marketplaceAddress) ERC721("DigitalVerse", "DVC") {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(MINTER_ROLE, msg.sender);
+        contractAddress = marketplaceAddress;
     }
 
     function safeMint(address to) public onlyRole(MINTER_ROLE) {
@@ -56,11 +58,11 @@ contract DigitalVerse is ERC721, ERC721URIStorage, AccessControl {
     function mintToken(string memory metadataURI) public returns (uint256)
     {
         _tokenIdCounter.increment();
-
         uint256 id = _tokenIdCounter.current();
+
         _safeMint(msg.sender, id);
         _setTokenURI(id, metadataURI);
-
+        setApprovalForAll(contractAddress, true);
         return id;
     }
 }
