@@ -18,7 +18,7 @@ func mintPolygonNft(name string, description string, imageCid string) (txHash st
 	}
 
 	// Create tx
-	instance, txOptions, err := createInstance(c.PolygonEndpointUrl, c.PolygonDeployWalletPk, c.PolygonContractAddress, big.NewInt(80001))
+	instance, txOptions, err := createInstance(c.PolygonEndpointUrl, c.PolygonDeployWalletPk, c.PolygonNftContractAddress, big.NewInt(80001))
 	if err != nil {
 		log.Error().Err(err).Msg("Failed to create contract instance")
 		return

@@ -98,7 +98,7 @@ func mintEthNft(name string, description string, imageCid string) (txHash string
 	}
 
 	// Create tx
-	instance, txOptions, err := createInstance(c.EthEndpointUrl, c.EthDeployWalletPk, c.EthContractAddress, big.NewInt(-1))
+	instance, txOptions, err := createInstance(c.EthEndpointUrl, c.EthDeployWalletPk, c.EthNftContractAddress, big.NewInt(-1))
 	if err != nil {
 		log.Error().Err(err)
 		return
