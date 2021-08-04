@@ -30,6 +30,6 @@ func mintNearNft(name string, description string, imageCid string) (txHash strin
 		return
 	}
 
-	txHash = nearTestnetExplorer + txHash
+	// txHash = nearTestnetExplorer + txHash
 	return
 }
