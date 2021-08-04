@@ -19,12 +19,20 @@ Recommends for good results: upload small videos (5-20 seconds long), keep your 
 ## Deployed smart contracts
 
 - ./contracts/solidity/ - path
-- https://mumbai.polygonscan.com/token/0x0decb8cf7834f0f7f4c502b4341898ef81143e27
-- https://explorer.testnet.near.org/accounts/aurora
-- https://rinkeby.etherscan.io/address/0xbf1550d38fadc10afa665c0f4bda3ca0dc77bdbb
-- https://testnet.hecoinfo.com/address/0x1d2a0ba44f522de56bf8fa83c312b8bdacfc20eb
 
-Our contract has all needed basic functions to work with NFT tokens:
+- https://mumbai.polygonscan.com/token/0x0decb8cf7834f0f7f4c502b4341898ef81143e27 - NFT
+https://mumbai.polygonscan.com/token/0x0decb8cf7834f0f7f4c502b4341898ef81143e27 - NFT Market
+
+- https://explorer.testnet.near.org/accounts/aurora - NFT
+https://explorer.testnet.near.org/accounts/aurora - NFT Market
+
+- https://rinkeby.etherscan.io/address/0x0ED06150f3Bb1E164d0065fAa4EAbC4843659Ae8 - NFT
+https://rinkeby.etherscan.io/address/0x37d6d59448778AFAcc14E880D0A2dfb3A36253d9 - NFT Market
+
+- https://testnet.hecoinfo.com/address/ - NFT
+https://testnet.hecoinfo.com/address/ - NFT Market
+
+Our contracts has all needed basic functions to work with NFT tokens:
 
 - **MintTokenToAddress(address owner, string memory metadataURI)** 
 
@@ -34,6 +42,18 @@ Our contract has all needed basic functions to work with NFT tokens:
     Allows you to transfer any NFT token on other address.
 - **Implementation of access control**
 
+- **NFT Market**
+
+    Allows you to list and sell created NFT tokens. Functions:
+
+    createMarketItem(address nftContract,uint256 tokenId,uint256 price)
+    
+    createMarketSale(address nftContract,uint256 itemId)
+    
+    fetchMarketItems() public view returns (MarketItem[] memory)
+    
+    fetchMyNFTs() public view returns (MarketItem[] memory)
+    
 ## API
 
 {server} = 165.22.72.149:49160 
