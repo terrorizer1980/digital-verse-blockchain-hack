@@ -20,17 +20,18 @@ Recommends for good results: upload small videos (5-20 seconds long), keep your 
 
 - ./contracts/solidity/ - path
 
-- https://mumbai.polygonscan.com/token/0x0decb8cf7834f0f7f4c502b4341898ef81143e27 - NFT
-https://mumbai.polygonscan.com/token/0x0decb8cf7834f0f7f4c502b4341898ef81143e27 - NFT Market
+- https://mumbai.polygonscan.com/token/0x6Aabd2Bce4bd40f109A5753BFc5c82bDb2Ad86Bd - NFT
+https://mumbai.polygonscan.com/token/0xfa98276B5D6e0C0118f1BB0B82E9d4A656454Fe2 - NFT Market
 
-- https://explorer.testnet.near.org/accounts/aurora - NFT
-https://explorer.testnet.near.org/accounts/aurora - NFT Market
+- https://explorer.testnet.near.org/accounts/aurora
+https://explorer.testnet.near.org/transactions/3KH8gCwg1CV1ZwxkTMZM85qnd2gft6NP8eJsZAkxcyq7, 0x4495cf49C0AD032AD691df1ebF850eAa3847E381 - NFT
+https://explorer.testnet.near.org/transactions/AGz6CHzXf3miTdU9JhRkLMUea4zfjBvHQtpXowaQUPGR , 0x98567e77F3214BEe5F34E8b9596C472C67721336 - NFT Market
 
 - https://rinkeby.etherscan.io/address/0x0ED06150f3Bb1E164d0065fAa4EAbC4843659Ae8 - NFT
 https://rinkeby.etherscan.io/address/0x37d6d59448778AFAcc14E880D0A2dfb3A36253d9 - NFT Market
 
-- https://testnet.hecoinfo.com/address/ - NFT
-https://testnet.hecoinfo.com/address/ - NFT Market
+- https://testnet.hecoinfo.com/address/0x3b2e02ABB28d8a124748e78E1fDE31B4F7520a7c - NFT
+https://testnet.hecoinfo.com/address/0x3b3ab07FabF9AFCb20952CE936673f1c27f9654C - NFT Market
 
 Our contracts has all needed basic functions to work with NFT tokens:
 
