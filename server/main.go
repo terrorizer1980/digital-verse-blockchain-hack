@@ -117,7 +117,7 @@ func main() {
 
 		ctx.JSON(200, gin.H{
 			"tx_hash":      txHash,
-			"url":          txHash,
+			"url":          nearTestnetExplorer,
 			"fileUrl": 		"https://ipfs.io/ipfs/" + ipfsCid,
 			"error":        err,
 		})
