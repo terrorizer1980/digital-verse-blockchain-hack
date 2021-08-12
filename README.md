@@ -6,7 +6,7 @@ docker-compose up
 server runs on port -> localhost:49160
 
 ## Demo access
-Url: https://dev.app.digitalverse.ai/
+Url: https://app.digitalverse.ai/
 
 Email: demo@digitalverse.com
 
