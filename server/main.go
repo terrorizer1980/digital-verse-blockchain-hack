@@ -41,6 +41,14 @@ func main() {
 		})
 	})
 
+	r.GET("/test", func(c *gin.Context) {
+		tokenId, err := getRaribleNftTokenId()
+		c.JSON(200, gin.H{
+			"error": err,
+			"tokenId": tokenId,
+		})
+	})
+
 	r.POST("/create_heco_nft", func(ctx *gin.Context) {
 		createReq, err := getCreateNftRequest(ctx)
 		if err != nil {
@@ -81,7 +89,7 @@ func main() {
 			return
 		}
 
-		txHash, err := mintEthNft(createReq.Name, createReq.Description, ipfsCid)
+		txHash, err := mintRinkebyNft(createReq.Name, createReq.Description, ipfsCid)
 		if err != nil {
 			log.Error().Err(err).Msg("Failed to mint NFT")
 			return
@@ -92,7 +100,7 @@ func main() {
 			"url":          txHash,
 			"fileUrl": 		"https://ipfs.io/ipfs/" + ipfsCid,
 			"error":        err,
-			"unmarshal":    "https://stg-api.unmarshal.io/v1/eth/address/" + c.EthDeployWalletAddress + "/nft-assets?auth_key=VGVtcEtleQ==",
+			"unmarshal":    "https://stg-api.unmarshal.io/v1/eth/address/" + c.RinkebyDeployWalletAddress + "/nft-assets?auth_key=VGVtcEtleQ==",
 		})
 	})
 
@@ -138,6 +146,34 @@ func main() {
 
 		txHash, err := mintPolygonNft(createReq.Name, createReq.Description, ipfsCid)
 
+		if err != nil {
+			log.Error().Err(err).Msg("Failed to mint NFT")
+			return
+		}
+
+		ctx.JSON(200, gin.H{
+			"tx_hash":      txHash,
+			"url":          txHash,
+			"fileUrl": 		"https://ipfs.io/ipfs/" + ipfsCid,
+			"error":        err,
+		})
+	})
+
+
+	r.POST("/create_rarible_nft", func(ctx *gin.Context) {
+		createReq, err := getCreateNftRequest(ctx)
+		if err != nil {
+			log.Error().Err(err).Msg("Failed to get params from request")
+			return
+		}
+
+		ipfsCid, err := uploadFileFromUrlToIpfs(createReq.URL)
+		if err != nil {
+			log.Error().Err(err).Msg("Failed to upload file to IPFS")
+			return
+		}
+
+		txHash, err := mintRaribleNft(createReq.Name, createReq.Description, ipfsCid)
 		if err != nil {
 			log.Error().Err(err).Msg("Failed to mint NFT")
 			return

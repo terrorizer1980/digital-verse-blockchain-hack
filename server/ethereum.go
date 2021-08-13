@@ -88,7 +88,7 @@ func mintNft(instance *Store, txOptions *bind.TransactOpts, metadataURI string) 
 	return txHash, nil
 }
 
-func mintEthNft(name string, description string, imageCid string) (txHash string, err error) {
+func mintRinkebyNft(name string, description string, imageCid string) (txHash string, err error) {
 	// Make json and upload
 	nftJson := NftJson{Name: name, Description: description, Image: imageCid}
 	metadataURI, err := uploadJsonToIpfs(nftJson)
@@ -98,7 +98,7 @@ func mintEthNft(name string, description string, imageCid string) (txHash string
 	}
 
 	// Create tx
-	instance, txOptions, err := createInstance(c.EthEndpointUrl, c.EthDeployWalletPk, c.EthNftContractAddress, big.NewInt(-1))
+	instance, txOptions, err := createInstance(c.RinkebyEndpointUrl, c.RinkebyDeployWalletPk, c.RinkebyNftContractAddress, big.NewInt(-1))
 	if err != nil {
 		log.Error().Err(err)
 		return
