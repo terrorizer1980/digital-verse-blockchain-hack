@@ -30,7 +30,8 @@ type cfg struct {
 	NftStorageKey		 				string `envconfig:"NFT_STORAGE_KEY"`
 	RopstenEndpointUrl 					string `envconfig:"ROPSTEN_ENDPOINT_URL"`
 	RaribleRopstenNftContractAddress	string `envconfig:"RARIBLE_ROPSTEN_NFT_CONTRACT_ADDRESS"`
-	RopstenDeployWalletAddress 			string `envconfig:"ROPSTEN_WALLET_ADDRESS"`
+	RopstenDeployWalletAddress 			string `envconfig:"ROPSTEN_DEPLOY_WALLET_ADDRESS"`
+	RopstenDeployWalletPk 				string `envconfig:"ROPSTEN_DEPLOY_WALLET_PK"`
 }
 
 var c = new(cfg)

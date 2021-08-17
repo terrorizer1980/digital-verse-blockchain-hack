@@ -18,7 +18,7 @@ func mintNearNft(name string, description string, imageCid string) (txHash strin
 	}
 
 	// Create tx
-	instance, txOptions, err := createInstance(c.AuroraEndpointUrl, c.AuroraDeployWalletPk, c.AuroraNftContractAddress, big.NewInt(-1))
+	instance, txOptions, err := createEthNftInstance(c.AuroraEndpointUrl, c.AuroraDeployWalletPk, c.AuroraNftContractAddress, big.NewInt(-1))
 	if err != nil {
 		log.Error().Err(err).Msg("Failed to create contract instance")
 		return

@@ -14,9 +14,8 @@ import (
 )
 
 const rinkebyExplorer = "https://rinkeby.etherscan.io/tx/"
-const ethBlockchainName = "eth"
 
-func createInstance(endpointUrl string, walletPk string, smartContractAddress string, chainId *big.Int) (instance *Store, txOptions *bind.TransactOpts, err error) {
+func createEthNftInstance(endpointUrl string, walletPk string, smartContractAddress string, chainId *big.Int) (instance *EthNft, txOptions *bind.TransactOpts, err error) {
 
 	client, err := ethclient.Dial(endpointUrl)
 	if err != nil {
@@ -67,7 +66,7 @@ func createInstance(endpointUrl string, walletPk string, smartContractAddress st
 	txOptions.GasPrice = gasPrice
 
 	address := common.HexToAddress(smartContractAddress)
-	instance, err = NewStore(address, client)
+	instance, err = NewEthNft(address, client)
 	if err != nil {
 		log.Error().Err(err)
 		return
@@ -75,7 +74,7 @@ func createInstance(endpointUrl string, walletPk string, smartContractAddress st
 	return instance, txOptions, nil
 }
 
-func mintNft(instance *Store, txOptions *bind.TransactOpts, metadataURI string) (txHash string, err error) {
+func mintNft(instance *EthNft, txOptions *bind.TransactOpts, metadataURI string) (txHash string, err error) {
 
 	tx, err := instance.MintToken(txOptions, metadataURI)
 	if err != nil {
@@ -98,7 +97,7 @@ func mintRinkebyNft(name string, description string, imageCid string) (txHash st
 	}
 
 	// Create tx
-	instance, txOptions, err := createInstance(c.RinkebyEndpointUrl, c.RinkebyDeployWalletPk, c.RinkebyNftContractAddress, big.NewInt(-1))
+	instance, txOptions, err := createEthNftInstance(c.RinkebyEndpointUrl, c.RinkebyDeployWalletPk, c.RinkebyNftContractAddress, big.NewInt(-1))
 	if err != nil {
 		log.Error().Err(err)
 		return

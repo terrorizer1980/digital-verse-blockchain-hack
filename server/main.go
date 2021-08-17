@@ -173,7 +173,7 @@ func main() {
 			return
 		}
 
-		txHash, err := mintRaribleNft(createReq.Name, createReq.Description, ipfsCid)
+		txHash, err := mintRaribleNft(createReq.Name, createReq.Description, ipfsCid, c.RopstenDeployWalletPk)
 		if err != nil {
 			log.Error().Err(err).Msg("Failed to mint NFT")
 			return

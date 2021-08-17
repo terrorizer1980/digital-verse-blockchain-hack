@@ -6,7 +6,6 @@ import (
 )
 
 const polygonTestnetExplorer = "https://mumbai.polygonscan.com/tx/"
-const polygonBlockchainName = "polygon"
 
 func mintPolygonNft(name string, description string, imageCid string) (txHash string, err error) {
 	// Make json and upload
@@ -18,7 +17,7 @@ func mintPolygonNft(name string, description string, imageCid string) (txHash st
 	}
 
 	// Create tx
-	instance, txOptions, err := createInstance(c.PolygonEndpointUrl, c.PolygonDeployWalletPk, c.PolygonNftContractAddress, big.NewInt(80001))
+	instance, txOptions, err := createEthNftInstance(c.PolygonEndpointUrl, c.PolygonDeployWalletPk, c.PolygonNftContractAddress, big.NewInt(80001))
 	if err != nil {
 		log.Error().Err(err).Msg("Failed to create contract instance")
 		return
