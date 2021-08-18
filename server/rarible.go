@@ -22,6 +22,7 @@ const ropstenTestnetExplorer = "https://ropsten.etherscan.io/tx/"
 // https://api-staging.rarible.com/protocol/v0.1/ethereum/nft/items/{itemId}/meta
 // https://api-dev.rarible.com/protocol/v0.1/ethereum/nft/items/21576722194993390593864209416790113291260823118183058861532018344159959056398/meta
 // https://app.rarible.com/{tokenId}
+// https://app-dev.rarible.com/{tokenId}
 
 func createRaribleNftInstance(endpointUrl string, walletPk string, smartContractAddress string, chainId *big.Int) (instance *RaribleNft, txOptions *bind.TransactOpts, err error) {
 
@@ -83,32 +84,35 @@ func createRaribleNftInstance(endpointUrl string, walletPk string, smartContract
 }
 
 
-func mintRaribleNft(name string, description string, imageCid string, toAddress string) (txHash string, err error) {
+func mintRaribleNft(name string, description string, imageCid string, minter string) (txHash string, tokenId *big.Int, metadataURI string, err error) {
+	tokenId, err = getRaribleNftTokenId()
+	if err != nil {
+		log.Error().Err(err)
+		return
+	}
 	// Make json and upload
-	nftJson := NftJson{Name: name, Description: description, Image: imageCid}
-	metadataURI, err := uploadJsonToIpfs(nftJson)
+	nftJson := NftJson{Name: name, Description: description, Image: imageCid }
+	metadataURI, err = uploadJsonToIpfs(nftJson)
 	if err != nil {
 		log.Error().Err(err).Msg("Error uploading json to Ipfs")
 		return
 	}
-
 	// Create tx
 	instance, txOptions, err := createRaribleNftInstance(c.RopstenEndpointUrl, c.RopstenDeployWalletPk, c.RaribleRopstenNftContractAddress, big.NewInt(-1))
 	if err != nil {
 		log.Error().Err(err)
 		return
 	}
-	tokenId, err := getRaribleNftTokenId()
-	if err != nil {
-		log.Error().Err(err)
-		return
-	}
+
 	data := LibERC721LazyMintMint721Data{
 		Uri: metadataURI,
 		TokenId: tokenId,
-
+		Creators: []LibPartPart{{Account: common.HexToAddress(minter), Value: new(big.Int).SetInt64(10000)}},
+		Royalties: []LibPartPart{{Account: common.HexToAddress(minter), Value: new(big.Int).SetInt64(1000)}},
+		Signatures: [][]byte{[]byte("0x")},
 	}
-	tx, err := instance.MintAndTransfer(txOptions, data, common.HexToAddress(toAddress))
+	fmt.Print(data)
+	tx, err := instance.MintAndTransfer(txOptions, data, common.HexToAddress(minter))
 	if err != nil {
 		log.Error().Err(err)
 		return

@@ -41,14 +41,6 @@ func main() {
 		})
 	})
 
-	r.GET("/test", func(c *gin.Context) {
-		tokenId, err := getRaribleNftTokenId()
-		c.JSON(200, gin.H{
-			"error": err,
-			"tokenId": tokenId,
-		})
-	})
-
 	r.POST("/create_heco_nft", func(ctx *gin.Context) {
 		createReq, err := getCreateNftRequest(ctx)
 		if err != nil {
@@ -173,7 +165,7 @@ func main() {
 			return
 		}
 
-		txHash, err := mintRaribleNft(createReq.Name, createReq.Description, ipfsCid, c.RopstenDeployWalletPk)
+		txHash, tokenId, metadataURI, err := mintRaribleNft(createReq.Name, createReq.Description, ipfsCid, c.RopstenDeployWalletPk)
 		if err != nil {
 			log.Error().Err(err).Msg("Failed to mint NFT")
 			return
@@ -181,8 +173,8 @@ func main() {
 
 		ctx.JSON(200, gin.H{
 			"tx_hash":      txHash,
-			"url":          txHash,
-			"fileUrl": 		"https://ipfs.io/ipfs/" + ipfsCid,
+			"url":          "https://app.rarible.com/" + tokenId.String(),
+			"fileUrl": 		"https://ipfs.io/ipfs/" + metadataURI,
 			"error":        err,
 		})
 	})
