@@ -99,6 +99,7 @@ Our contracts has all needed basic functions to work with NFT tokens:
 
 - https://github.com/oligot/go-mod-upgrade
 - go mod tidy
+- https://mholt.github.io/curl-to-go/
 
 ## License
 Apache License, Version 2.0

@@ -25,9 +25,9 @@ type ValueField struct {
 }
 
 type NftJson struct {
-	Name        string
-	Description string
-	Image       string
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Image       string `json:"image"`
 }
 
 func uploadJsonToIpfs(nftJson NftJson) (cid string, err error) {

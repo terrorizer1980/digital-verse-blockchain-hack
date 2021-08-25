@@ -26,107 +26,107 @@ var (
 	_ = event.NewSubscription
 )
 
-// StoreABI is the input ABI used to generate the binding from.
-const StoreABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"marketplaceAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINTER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"}],\"name\":\"mintToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"}],\"name\":\"mintTokenToAddress\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"safeMint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
+// EthNftABI is the input ABI used to generate the binding from.
+const EthNftABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"marketplaceAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINTER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"}],\"name\":\"mintToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"metadataURI\",\"type\":\"string\"}],\"name\":\"mintTokenToAddress\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"safeMint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
 
-// Store is an auto generated Go binding around an Ethereum contract.
-type Store struct {
-	StoreCaller     // Read-only binding to the contract
-	StoreTransactor // Write-only binding to the contract
-	StoreFilterer   // Log filterer for contract events
+// EthNft is an auto generated Go binding around an Ethereum contract.
+type EthNft struct {
+	EthNftCaller     // Read-only binding to the contract
+	EthNftTransactor // Write-only binding to the contract
+	EthNftFilterer   // Log filterer for contract events
 }
 
-// StoreCaller is an auto generated read-only Go binding around an Ethereum contract.
-type StoreCaller struct {
+// EthNftCaller is an auto generated read-only Go binding around an Ethereum contract.
+type EthNftCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// StoreTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type StoreTransactor struct {
+// EthNftTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type EthNftTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// StoreFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type StoreFilterer struct {
+// EthNftFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type EthNftFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// StoreSession is an auto generated Go binding around an Ethereum contract,
+// EthNftSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type StoreSession struct {
-	Contract     *Store            // Generic contract binding to set the session for
+type EthNftSession struct {
+	Contract     *EthNft           // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// StoreCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// EthNftCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type StoreCallerSession struct {
-	Contract *StoreCaller  // Generic contract caller binding to set the session for
+type EthNftCallerSession struct {
+	Contract *EthNftCaller // Generic contract caller binding to set the session for
 	CallOpts bind.CallOpts // Call options to use throughout this session
 }
 
-// StoreTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// EthNftTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type StoreTransactorSession struct {
-	Contract     *StoreTransactor  // Generic contract transactor binding to set the session for
+type EthNftTransactorSession struct {
+	Contract     *EthNftTransactor // Generic contract transactor binding to set the session for
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// StoreRaw is an auto generated low-level Go binding around an Ethereum contract.
-type StoreRaw struct {
-	Contract *Store // Generic contract binding to access the raw methods on
+// EthNftRaw is an auto generated low-level Go binding around an Ethereum contract.
+type EthNftRaw struct {
+	Contract *EthNft // Generic contract binding to access the raw methods on
 }
 
-// StoreCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type StoreCallerRaw struct {
-	Contract *StoreCaller // Generic read-only contract binding to access the raw methods on
+// EthNftCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type EthNftCallerRaw struct {
+	Contract *EthNftCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// StoreTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type StoreTransactorRaw struct {
-	Contract *StoreTransactor // Generic write-only contract binding to access the raw methods on
+// EthNftTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type EthNftTransactorRaw struct {
+	Contract *EthNftTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewStore creates a new instance of Store, bound to a specific deployed contract.
-func NewStore(address common.Address, backend bind.ContractBackend) (*Store, error) {
-	contract, err := bindStore(address, backend, backend, backend)
+// NewEthNft creates a new instance of EthNft, bound to a specific deployed contract.
+func NewEthNft(address common.Address, backend bind.ContractBackend) (*EthNft, error) {
+	contract, err := bindEthNft(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &Store{StoreCaller: StoreCaller{contract: contract}, StoreTransactor: StoreTransactor{contract: contract}, StoreFilterer: StoreFilterer{contract: contract}}, nil
+	return &EthNft{EthNftCaller: EthNftCaller{contract: contract}, EthNftTransactor: EthNftTransactor{contract: contract}, EthNftFilterer: EthNftFilterer{contract: contract}}, nil
 }
 
-// NewStoreCaller creates a new read-only instance of Store, bound to a specific deployed contract.
-func NewStoreCaller(address common.Address, caller bind.ContractCaller) (*StoreCaller, error) {
-	contract, err := bindStore(address, caller, nil, nil)
+// NewEthNftCaller creates a new read-only instance of EthNft, bound to a specific deployed contract.
+func NewEthNftCaller(address common.Address, caller bind.ContractCaller) (*EthNftCaller, error) {
+	contract, err := bindEthNft(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreCaller{contract: contract}, nil
+	return &EthNftCaller{contract: contract}, nil
 }
 
-// NewStoreTransactor creates a new write-only instance of Store, bound to a specific deployed contract.
-func NewStoreTransactor(address common.Address, transactor bind.ContractTransactor) (*StoreTransactor, error) {
-	contract, err := bindStore(address, nil, transactor, nil)
+// NewEthNftTransactor creates a new write-only instance of EthNft, bound to a specific deployed contract.
+func NewEthNftTransactor(address common.Address, transactor bind.ContractTransactor) (*EthNftTransactor, error) {
+	contract, err := bindEthNft(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreTransactor{contract: contract}, nil
+	return &EthNftTransactor{contract: contract}, nil
 }
 
-// NewStoreFilterer creates a new log filterer instance of Store, bound to a specific deployed contract.
-func NewStoreFilterer(address common.Address, filterer bind.ContractFilterer) (*StoreFilterer, error) {
-	contract, err := bindStore(address, nil, nil, filterer)
+// NewEthNftFilterer creates a new log filterer instance of EthNft, bound to a specific deployed contract.
+func NewEthNftFilterer(address common.Address, filterer bind.ContractFilterer) (*EthNftFilterer, error) {
+	contract, err := bindEthNft(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreFilterer{contract: contract}, nil
+	return &EthNftFilterer{contract: contract}, nil
 }
 
-// bindStore binds a generic wrapper to an already deployed contract.
-func bindStore(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(StoreABI))
+// bindEthNft binds a generic wrapper to an already deployed contract.
+func bindEthNft(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := abi.JSON(strings.NewReader(EthNftABI))
 	if err != nil {
 		return nil, err
 	}
@@ -137,46 +137,46 @@ func bindStore(address common.Address, caller bind.ContractCaller, transactor bi
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Store *StoreRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Store.Contract.StoreCaller.contract.Call(opts, result, method, params...)
+func (_EthNft *EthNftRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _EthNft.Contract.EthNftCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Store *StoreRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Store.Contract.StoreTransactor.contract.Transfer(opts)
+func (_EthNft *EthNftRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _EthNft.Contract.EthNftTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Store *StoreRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Store.Contract.StoreTransactor.contract.Transact(opts, method, params...)
+func (_EthNft *EthNftRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _EthNft.Contract.EthNftTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_Store *StoreCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _Store.Contract.contract.Call(opts, result, method, params...)
+func (_EthNft *EthNftCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _EthNft.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_Store *StoreTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Store.Contract.contract.Transfer(opts)
+func (_EthNft *EthNftTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _EthNft.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_Store *StoreTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Store.Contract.contract.Transact(opts, method, params...)
+func (_EthNft *EthNftTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _EthNft.Contract.contract.Transact(opts, method, params...)
 }
 
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-func (_Store *StoreCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_EthNft *EthNftCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE")
+	err := _EthNft.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -191,23 +191,23 @@ func (_Store *StoreCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, erro
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-func (_Store *StoreSession) DEFAULTADMINROLE() ([32]byte, error) {
-	return _Store.Contract.DEFAULTADMINROLE(&_Store.CallOpts)
+func (_EthNft *EthNftSession) DEFAULTADMINROLE() ([32]byte, error) {
+	return _EthNft.Contract.DEFAULTADMINROLE(&_EthNft.CallOpts)
 }
 
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-func (_Store *StoreCallerSession) DEFAULTADMINROLE() ([32]byte, error) {
-	return _Store.Contract.DEFAULTADMINROLE(&_Store.CallOpts)
+func (_EthNft *EthNftCallerSession) DEFAULTADMINROLE() ([32]byte, error) {
+	return _EthNft.Contract.DEFAULTADMINROLE(&_EthNft.CallOpts)
 }
 
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
-func (_Store *StoreCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_EthNft *EthNftCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "MINTER_ROLE")
+	err := _EthNft.contract.Call(opts, &out, "MINTER_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -222,23 +222,23 @@ func (_Store *StoreCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, error) {
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
-func (_Store *StoreSession) MINTERROLE() ([32]byte, error) {
-	return _Store.Contract.MINTERROLE(&_Store.CallOpts)
+func (_EthNft *EthNftSession) MINTERROLE() ([32]byte, error) {
+	return _EthNft.Contract.MINTERROLE(&_EthNft.CallOpts)
 }
 
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
-func (_Store *StoreCallerSession) MINTERROLE() ([32]byte, error) {
-	return _Store.Contract.MINTERROLE(&_Store.CallOpts)
+func (_EthNft *EthNftCallerSession) MINTERROLE() ([32]byte, error) {
+	return _EthNft.Contract.MINTERROLE(&_EthNft.CallOpts)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address owner) view returns(uint256)
-func (_Store *StoreCaller) BalanceOf(opts *bind.CallOpts, owner common.Address) (*big.Int, error) {
+func (_EthNft *EthNftCaller) BalanceOf(opts *bind.CallOpts, owner common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "balanceOf", owner)
+	err := _EthNft.contract.Call(opts, &out, "balanceOf", owner)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -253,23 +253,23 @@ func (_Store *StoreCaller) BalanceOf(opts *bind.CallOpts, owner common.Address) 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address owner) view returns(uint256)
-func (_Store *StoreSession) BalanceOf(owner common.Address) (*big.Int, error) {
-	return _Store.Contract.BalanceOf(&_Store.CallOpts, owner)
+func (_EthNft *EthNftSession) BalanceOf(owner common.Address) (*big.Int, error) {
+	return _EthNft.Contract.BalanceOf(&_EthNft.CallOpts, owner)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address owner) view returns(uint256)
-func (_Store *StoreCallerSession) BalanceOf(owner common.Address) (*big.Int, error) {
-	return _Store.Contract.BalanceOf(&_Store.CallOpts, owner)
+func (_EthNft *EthNftCallerSession) BalanceOf(owner common.Address) (*big.Int, error) {
+	return _EthNft.Contract.BalanceOf(&_EthNft.CallOpts, owner)
 }
 
 // GetApproved is a free data retrieval call binding the contract method 0x081812fc.
 //
 // Solidity: function getApproved(uint256 tokenId) view returns(address)
-func (_Store *StoreCaller) GetApproved(opts *bind.CallOpts, tokenId *big.Int) (common.Address, error) {
+func (_EthNft *EthNftCaller) GetApproved(opts *bind.CallOpts, tokenId *big.Int) (common.Address, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "getApproved", tokenId)
+	err := _EthNft.contract.Call(opts, &out, "getApproved", tokenId)
 
 	if err != nil {
 		return *new(common.Address), err
@@ -284,23 +284,23 @@ func (_Store *StoreCaller) GetApproved(opts *bind.CallOpts, tokenId *big.Int) (c
 // GetApproved is a free data retrieval call binding the contract method 0x081812fc.
 //
 // Solidity: function getApproved(uint256 tokenId) view returns(address)
-func (_Store *StoreSession) GetApproved(tokenId *big.Int) (common.Address, error) {
-	return _Store.Contract.GetApproved(&_Store.CallOpts, tokenId)
+func (_EthNft *EthNftSession) GetApproved(tokenId *big.Int) (common.Address, error) {
+	return _EthNft.Contract.GetApproved(&_EthNft.CallOpts, tokenId)
 }
 
 // GetApproved is a free data retrieval call binding the contract method 0x081812fc.
 //
 // Solidity: function getApproved(uint256 tokenId) view returns(address)
-func (_Store *StoreCallerSession) GetApproved(tokenId *big.Int) (common.Address, error) {
-	return _Store.Contract.GetApproved(&_Store.CallOpts, tokenId)
+func (_EthNft *EthNftCallerSession) GetApproved(tokenId *big.Int) (common.Address, error) {
+	return _EthNft.Contract.GetApproved(&_EthNft.CallOpts, tokenId)
 }
 
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-func (_Store *StoreCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32]byte, error) {
+func (_EthNft *EthNftCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32]byte, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "getRoleAdmin", role)
+	err := _EthNft.contract.Call(opts, &out, "getRoleAdmin", role)
 
 	if err != nil {
 		return *new([32]byte), err
@@ -315,23 +315,23 @@ func (_Store *StoreCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-func (_Store *StoreSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
-	return _Store.Contract.GetRoleAdmin(&_Store.CallOpts, role)
+func (_EthNft *EthNftSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
+	return _EthNft.Contract.GetRoleAdmin(&_EthNft.CallOpts, role)
 }
 
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-func (_Store *StoreCallerSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
-	return _Store.Contract.GetRoleAdmin(&_Store.CallOpts, role)
+func (_EthNft *EthNftCallerSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
+	return _EthNft.Contract.GetRoleAdmin(&_EthNft.CallOpts, role)
 }
 
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-func (_Store *StoreCaller) HasRole(opts *bind.CallOpts, role [32]byte, account common.Address) (bool, error) {
+func (_EthNft *EthNftCaller) HasRole(opts *bind.CallOpts, role [32]byte, account common.Address) (bool, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "hasRole", role, account)
+	err := _EthNft.contract.Call(opts, &out, "hasRole", role, account)
 
 	if err != nil {
 		return *new(bool), err
@@ -346,23 +346,23 @@ func (_Store *StoreCaller) HasRole(opts *bind.CallOpts, role [32]byte, account c
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-func (_Store *StoreSession) HasRole(role [32]byte, account common.Address) (bool, error) {
-	return _Store.Contract.HasRole(&_Store.CallOpts, role, account)
+func (_EthNft *EthNftSession) HasRole(role [32]byte, account common.Address) (bool, error) {
+	return _EthNft.Contract.HasRole(&_EthNft.CallOpts, role, account)
 }
 
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-func (_Store *StoreCallerSession) HasRole(role [32]byte, account common.Address) (bool, error) {
-	return _Store.Contract.HasRole(&_Store.CallOpts, role, account)
+func (_EthNft *EthNftCallerSession) HasRole(role [32]byte, account common.Address) (bool, error) {
+	return _EthNft.Contract.HasRole(&_EthNft.CallOpts, role, account)
 }
 
 // IsApprovedForAll is a free data retrieval call binding the contract method 0xe985e9c5.
 //
 // Solidity: function isApprovedForAll(address owner, address operator) view returns(bool)
-func (_Store *StoreCaller) IsApprovedForAll(opts *bind.CallOpts, owner common.Address, operator common.Address) (bool, error) {
+func (_EthNft *EthNftCaller) IsApprovedForAll(opts *bind.CallOpts, owner common.Address, operator common.Address) (bool, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "isApprovedForAll", owner, operator)
+	err := _EthNft.contract.Call(opts, &out, "isApprovedForAll", owner, operator)
 
 	if err != nil {
 		return *new(bool), err
@@ -377,23 +377,23 @@ func (_Store *StoreCaller) IsApprovedForAll(opts *bind.CallOpts, owner common.Ad
 // IsApprovedForAll is a free data retrieval call binding the contract method 0xe985e9c5.
 //
 // Solidity: function isApprovedForAll(address owner, address operator) view returns(bool)
-func (_Store *StoreSession) IsApprovedForAll(owner common.Address, operator common.Address) (bool, error) {
-	return _Store.Contract.IsApprovedForAll(&_Store.CallOpts, owner, operator)
+func (_EthNft *EthNftSession) IsApprovedForAll(owner common.Address, operator common.Address) (bool, error) {
+	return _EthNft.Contract.IsApprovedForAll(&_EthNft.CallOpts, owner, operator)
 }
 
 // IsApprovedForAll is a free data retrieval call binding the contract method 0xe985e9c5.
 //
 // Solidity: function isApprovedForAll(address owner, address operator) view returns(bool)
-func (_Store *StoreCallerSession) IsApprovedForAll(owner common.Address, operator common.Address) (bool, error) {
-	return _Store.Contract.IsApprovedForAll(&_Store.CallOpts, owner, operator)
+func (_EthNft *EthNftCallerSession) IsApprovedForAll(owner common.Address, operator common.Address) (bool, error) {
+	return _EthNft.Contract.IsApprovedForAll(&_EthNft.CallOpts, owner, operator)
 }
 
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
-func (_Store *StoreCaller) Name(opts *bind.CallOpts) (string, error) {
+func (_EthNft *EthNftCaller) Name(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "name")
+	err := _EthNft.contract.Call(opts, &out, "name")
 
 	if err != nil {
 		return *new(string), err
@@ -408,23 +408,23 @@ func (_Store *StoreCaller) Name(opts *bind.CallOpts) (string, error) {
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
-func (_Store *StoreSession) Name() (string, error) {
-	return _Store.Contract.Name(&_Store.CallOpts)
+func (_EthNft *EthNftSession) Name() (string, error) {
+	return _EthNft.Contract.Name(&_EthNft.CallOpts)
 }
 
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
-func (_Store *StoreCallerSession) Name() (string, error) {
-	return _Store.Contract.Name(&_Store.CallOpts)
+func (_EthNft *EthNftCallerSession) Name() (string, error) {
+	return _EthNft.Contract.Name(&_EthNft.CallOpts)
 }
 
 // OwnerOf is a free data retrieval call binding the contract method 0x6352211e.
 //
 // Solidity: function ownerOf(uint256 tokenId) view returns(address)
-func (_Store *StoreCaller) OwnerOf(opts *bind.CallOpts, tokenId *big.Int) (common.Address, error) {
+func (_EthNft *EthNftCaller) OwnerOf(opts *bind.CallOpts, tokenId *big.Int) (common.Address, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "ownerOf", tokenId)
+	err := _EthNft.contract.Call(opts, &out, "ownerOf", tokenId)
 
 	if err != nil {
 		return *new(common.Address), err
@@ -439,23 +439,23 @@ func (_Store *StoreCaller) OwnerOf(opts *bind.CallOpts, tokenId *big.Int) (commo
 // OwnerOf is a free data retrieval call binding the contract method 0x6352211e.
 //
 // Solidity: function ownerOf(uint256 tokenId) view returns(address)
-func (_Store *StoreSession) OwnerOf(tokenId *big.Int) (common.Address, error) {
-	return _Store.Contract.OwnerOf(&_Store.CallOpts, tokenId)
+func (_EthNft *EthNftSession) OwnerOf(tokenId *big.Int) (common.Address, error) {
+	return _EthNft.Contract.OwnerOf(&_EthNft.CallOpts, tokenId)
 }
 
 // OwnerOf is a free data retrieval call binding the contract method 0x6352211e.
 //
 // Solidity: function ownerOf(uint256 tokenId) view returns(address)
-func (_Store *StoreCallerSession) OwnerOf(tokenId *big.Int) (common.Address, error) {
-	return _Store.Contract.OwnerOf(&_Store.CallOpts, tokenId)
+func (_EthNft *EthNftCallerSession) OwnerOf(tokenId *big.Int) (common.Address, error) {
+	return _EthNft.Contract.OwnerOf(&_EthNft.CallOpts, tokenId)
 }
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-func (_Store *StoreCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
+func (_EthNft *EthNftCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "supportsInterface", interfaceId)
+	err := _EthNft.contract.Call(opts, &out, "supportsInterface", interfaceId)
 
 	if err != nil {
 		return *new(bool), err
@@ -470,23 +470,23 @@ func (_Store *StoreCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-func (_Store *StoreSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
-	return _Store.Contract.SupportsInterface(&_Store.CallOpts, interfaceId)
+func (_EthNft *EthNftSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _EthNft.Contract.SupportsInterface(&_EthNft.CallOpts, interfaceId)
 }
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-func (_Store *StoreCallerSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
-	return _Store.Contract.SupportsInterface(&_Store.CallOpts, interfaceId)
+func (_EthNft *EthNftCallerSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _EthNft.Contract.SupportsInterface(&_EthNft.CallOpts, interfaceId)
 }
 
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() view returns(string)
-func (_Store *StoreCaller) Symbol(opts *bind.CallOpts) (string, error) {
+func (_EthNft *EthNftCaller) Symbol(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "symbol")
+	err := _EthNft.contract.Call(opts, &out, "symbol")
 
 	if err != nil {
 		return *new(string), err
@@ -501,23 +501,23 @@ func (_Store *StoreCaller) Symbol(opts *bind.CallOpts) (string, error) {
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() view returns(string)
-func (_Store *StoreSession) Symbol() (string, error) {
-	return _Store.Contract.Symbol(&_Store.CallOpts)
+func (_EthNft *EthNftSession) Symbol() (string, error) {
+	return _EthNft.Contract.Symbol(&_EthNft.CallOpts)
 }
 
 // Symbol is a free data retrieval call binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() view returns(string)
-func (_Store *StoreCallerSession) Symbol() (string, error) {
-	return _Store.Contract.Symbol(&_Store.CallOpts)
+func (_EthNft *EthNftCallerSession) Symbol() (string, error) {
+	return _EthNft.Contract.Symbol(&_EthNft.CallOpts)
 }
 
 // TokenURI is a free data retrieval call binding the contract method 0xc87b56dd.
 //
 // Solidity: function tokenURI(uint256 tokenId) view returns(string)
-func (_Store *StoreCaller) TokenURI(opts *bind.CallOpts, tokenId *big.Int) (string, error) {
+func (_EthNft *EthNftCaller) TokenURI(opts *bind.CallOpts, tokenId *big.Int) (string, error) {
 	var out []interface{}
-	err := _Store.contract.Call(opts, &out, "tokenURI", tokenId)
+	err := _EthNft.contract.Call(opts, &out, "tokenURI", tokenId)
 
 	if err != nil {
 		return *new(string), err
@@ -532,251 +532,251 @@ func (_Store *StoreCaller) TokenURI(opts *bind.CallOpts, tokenId *big.Int) (stri
 // TokenURI is a free data retrieval call binding the contract method 0xc87b56dd.
 //
 // Solidity: function tokenURI(uint256 tokenId) view returns(string)
-func (_Store *StoreSession) TokenURI(tokenId *big.Int) (string, error) {
-	return _Store.Contract.TokenURI(&_Store.CallOpts, tokenId)
+func (_EthNft *EthNftSession) TokenURI(tokenId *big.Int) (string, error) {
+	return _EthNft.Contract.TokenURI(&_EthNft.CallOpts, tokenId)
 }
 
 // TokenURI is a free data retrieval call binding the contract method 0xc87b56dd.
 //
 // Solidity: function tokenURI(uint256 tokenId) view returns(string)
-func (_Store *StoreCallerSession) TokenURI(tokenId *big.Int) (string, error) {
-	return _Store.Contract.TokenURI(&_Store.CallOpts, tokenId)
+func (_EthNft *EthNftCallerSession) TokenURI(tokenId *big.Int) (string, error) {
+	return _EthNft.Contract.TokenURI(&_EthNft.CallOpts, tokenId)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address to, uint256 tokenId) returns()
-func (_Store *StoreTransactor) Approve(opts *bind.TransactOpts, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "approve", to, tokenId)
+func (_EthNft *EthNftTransactor) Approve(opts *bind.TransactOpts, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "approve", to, tokenId)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address to, uint256 tokenId) returns()
-func (_Store *StoreSession) Approve(to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.Contract.Approve(&_Store.TransactOpts, to, tokenId)
+func (_EthNft *EthNftSession) Approve(to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.Contract.Approve(&_EthNft.TransactOpts, to, tokenId)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address to, uint256 tokenId) returns()
-func (_Store *StoreTransactorSession) Approve(to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.Contract.Approve(&_Store.TransactOpts, to, tokenId)
+func (_EthNft *EthNftTransactorSession) Approve(to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.Contract.Approve(&_EthNft.TransactOpts, to, tokenId)
 }
 
 // GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 //
 // Solidity: function grantRole(bytes32 role, address account) returns()
-func (_Store *StoreTransactor) GrantRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "grantRole", role, account)
+func (_EthNft *EthNftTransactor) GrantRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "grantRole", role, account)
 }
 
 // GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 //
 // Solidity: function grantRole(bytes32 role, address account) returns()
-func (_Store *StoreSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.Contract.GrantRole(&_Store.TransactOpts, role, account)
+func (_EthNft *EthNftSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.GrantRole(&_EthNft.TransactOpts, role, account)
 }
 
 // GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 //
 // Solidity: function grantRole(bytes32 role, address account) returns()
-func (_Store *StoreTransactorSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.Contract.GrantRole(&_Store.TransactOpts, role, account)
+func (_EthNft *EthNftTransactorSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.GrantRole(&_EthNft.TransactOpts, role, account)
 }
 
 // MintToken is a paid mutator transaction binding the contract method 0x33eba49a.
 //
 // Solidity: function mintToken(string metadataURI) returns(uint256)
-func (_Store *StoreTransactor) MintToken(opts *bind.TransactOpts, metadataURI string) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "mintToken", metadataURI)
+func (_EthNft *EthNftTransactor) MintToken(opts *bind.TransactOpts, metadataURI string) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "mintToken", metadataURI)
 }
 
 // MintToken is a paid mutator transaction binding the contract method 0x33eba49a.
 //
 // Solidity: function mintToken(string metadataURI) returns(uint256)
-func (_Store *StoreSession) MintToken(metadataURI string) (*types.Transaction, error) {
-	return _Store.Contract.MintToken(&_Store.TransactOpts, metadataURI)
+func (_EthNft *EthNftSession) MintToken(metadataURI string) (*types.Transaction, error) {
+	return _EthNft.Contract.MintToken(&_EthNft.TransactOpts, metadataURI)
 }
 
 // MintToken is a paid mutator transaction binding the contract method 0x33eba49a.
 //
 // Solidity: function mintToken(string metadataURI) returns(uint256)
-func (_Store *StoreTransactorSession) MintToken(metadataURI string) (*types.Transaction, error) {
-	return _Store.Contract.MintToken(&_Store.TransactOpts, metadataURI)
+func (_EthNft *EthNftTransactorSession) MintToken(metadataURI string) (*types.Transaction, error) {
+	return _EthNft.Contract.MintToken(&_EthNft.TransactOpts, metadataURI)
 }
 
 // MintTokenToAddress is a paid mutator transaction binding the contract method 0xe25f25ad.
 //
 // Solidity: function mintTokenToAddress(address owner, string metadataURI) returns(uint256)
-func (_Store *StoreTransactor) MintTokenToAddress(opts *bind.TransactOpts, owner common.Address, metadataURI string) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "mintTokenToAddress", owner, metadataURI)
+func (_EthNft *EthNftTransactor) MintTokenToAddress(opts *bind.TransactOpts, owner common.Address, metadataURI string) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "mintTokenToAddress", owner, metadataURI)
 }
 
 // MintTokenToAddress is a paid mutator transaction binding the contract method 0xe25f25ad.
 //
 // Solidity: function mintTokenToAddress(address owner, string metadataURI) returns(uint256)
-func (_Store *StoreSession) MintTokenToAddress(owner common.Address, metadataURI string) (*types.Transaction, error) {
-	return _Store.Contract.MintTokenToAddress(&_Store.TransactOpts, owner, metadataURI)
+func (_EthNft *EthNftSession) MintTokenToAddress(owner common.Address, metadataURI string) (*types.Transaction, error) {
+	return _EthNft.Contract.MintTokenToAddress(&_EthNft.TransactOpts, owner, metadataURI)
 }
 
 // MintTokenToAddress is a paid mutator transaction binding the contract method 0xe25f25ad.
 //
 // Solidity: function mintTokenToAddress(address owner, string metadataURI) returns(uint256)
-func (_Store *StoreTransactorSession) MintTokenToAddress(owner common.Address, metadataURI string) (*types.Transaction, error) {
-	return _Store.Contract.MintTokenToAddress(&_Store.TransactOpts, owner, metadataURI)
+func (_EthNft *EthNftTransactorSession) MintTokenToAddress(owner common.Address, metadataURI string) (*types.Transaction, error) {
+	return _EthNft.Contract.MintTokenToAddress(&_EthNft.TransactOpts, owner, metadataURI)
 }
 
 // RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
 // Solidity: function renounceRole(bytes32 role, address account) returns()
-func (_Store *StoreTransactor) RenounceRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "renounceRole", role, account)
+func (_EthNft *EthNftTransactor) RenounceRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "renounceRole", role, account)
 }
 
 // RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
 // Solidity: function renounceRole(bytes32 role, address account) returns()
-func (_Store *StoreSession) RenounceRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.Contract.RenounceRole(&_Store.TransactOpts, role, account)
+func (_EthNft *EthNftSession) RenounceRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.RenounceRole(&_EthNft.TransactOpts, role, account)
 }
 
 // RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
 // Solidity: function renounceRole(bytes32 role, address account) returns()
-func (_Store *StoreTransactorSession) RenounceRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.Contract.RenounceRole(&_Store.TransactOpts, role, account)
+func (_EthNft *EthNftTransactorSession) RenounceRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.RenounceRole(&_EthNft.TransactOpts, role, account)
 }
 
 // RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
 // Solidity: function revokeRole(bytes32 role, address account) returns()
-func (_Store *StoreTransactor) RevokeRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "revokeRole", role, account)
+func (_EthNft *EthNftTransactor) RevokeRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "revokeRole", role, account)
 }
 
 // RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
 // Solidity: function revokeRole(bytes32 role, address account) returns()
-func (_Store *StoreSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.Contract.RevokeRole(&_Store.TransactOpts, role, account)
+func (_EthNft *EthNftSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.RevokeRole(&_EthNft.TransactOpts, role, account)
 }
 
 // RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
 // Solidity: function revokeRole(bytes32 role, address account) returns()
-func (_Store *StoreTransactorSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _Store.Contract.RevokeRole(&_Store.TransactOpts, role, account)
+func (_EthNft *EthNftTransactorSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.RevokeRole(&_EthNft.TransactOpts, role, account)
 }
 
 // SafeMint is a paid mutator transaction binding the contract method 0x40d097c3.
 //
 // Solidity: function safeMint(address to) returns()
-func (_Store *StoreTransactor) SafeMint(opts *bind.TransactOpts, to common.Address) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "safeMint", to)
+func (_EthNft *EthNftTransactor) SafeMint(opts *bind.TransactOpts, to common.Address) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "safeMint", to)
 }
 
 // SafeMint is a paid mutator transaction binding the contract method 0x40d097c3.
 //
 // Solidity: function safeMint(address to) returns()
-func (_Store *StoreSession) SafeMint(to common.Address) (*types.Transaction, error) {
-	return _Store.Contract.SafeMint(&_Store.TransactOpts, to)
+func (_EthNft *EthNftSession) SafeMint(to common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.SafeMint(&_EthNft.TransactOpts, to)
 }
 
 // SafeMint is a paid mutator transaction binding the contract method 0x40d097c3.
 //
 // Solidity: function safeMint(address to) returns()
-func (_Store *StoreTransactorSession) SafeMint(to common.Address) (*types.Transaction, error) {
-	return _Store.Contract.SafeMint(&_Store.TransactOpts, to)
+func (_EthNft *EthNftTransactorSession) SafeMint(to common.Address) (*types.Transaction, error) {
+	return _EthNft.Contract.SafeMint(&_EthNft.TransactOpts, to)
 }
 
 // SafeTransferFrom is a paid mutator transaction binding the contract method 0x42842e0e.
 //
 // Solidity: function safeTransferFrom(address from, address to, uint256 tokenId) returns()
-func (_Store *StoreTransactor) SafeTransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "safeTransferFrom", from, to, tokenId)
+func (_EthNft *EthNftTransactor) SafeTransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "safeTransferFrom", from, to, tokenId)
 }
 
 // SafeTransferFrom is a paid mutator transaction binding the contract method 0x42842e0e.
 //
 // Solidity: function safeTransferFrom(address from, address to, uint256 tokenId) returns()
-func (_Store *StoreSession) SafeTransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.Contract.SafeTransferFrom(&_Store.TransactOpts, from, to, tokenId)
+func (_EthNft *EthNftSession) SafeTransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.Contract.SafeTransferFrom(&_EthNft.TransactOpts, from, to, tokenId)
 }
 
 // SafeTransferFrom is a paid mutator transaction binding the contract method 0x42842e0e.
 //
 // Solidity: function safeTransferFrom(address from, address to, uint256 tokenId) returns()
-func (_Store *StoreTransactorSession) SafeTransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.Contract.SafeTransferFrom(&_Store.TransactOpts, from, to, tokenId)
+func (_EthNft *EthNftTransactorSession) SafeTransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.Contract.SafeTransferFrom(&_EthNft.TransactOpts, from, to, tokenId)
 }
 
 // SafeTransferFrom0 is a paid mutator transaction binding the contract method 0xb88d4fde.
 //
 // Solidity: function safeTransferFrom(address from, address to, uint256 tokenId, bytes _data) returns()
-func (_Store *StoreTransactor) SafeTransferFrom0(opts *bind.TransactOpts, from common.Address, to common.Address, tokenId *big.Int, _data []byte) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "safeTransferFrom0", from, to, tokenId, _data)
+func (_EthNft *EthNftTransactor) SafeTransferFrom0(opts *bind.TransactOpts, from common.Address, to common.Address, tokenId *big.Int, _data []byte) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "safeTransferFrom0", from, to, tokenId, _data)
 }
 
 // SafeTransferFrom0 is a paid mutator transaction binding the contract method 0xb88d4fde.
 //
 // Solidity: function safeTransferFrom(address from, address to, uint256 tokenId, bytes _data) returns()
-func (_Store *StoreSession) SafeTransferFrom0(from common.Address, to common.Address, tokenId *big.Int, _data []byte) (*types.Transaction, error) {
-	return _Store.Contract.SafeTransferFrom0(&_Store.TransactOpts, from, to, tokenId, _data)
+func (_EthNft *EthNftSession) SafeTransferFrom0(from common.Address, to common.Address, tokenId *big.Int, _data []byte) (*types.Transaction, error) {
+	return _EthNft.Contract.SafeTransferFrom0(&_EthNft.TransactOpts, from, to, tokenId, _data)
 }
 
 // SafeTransferFrom0 is a paid mutator transaction binding the contract method 0xb88d4fde.
 //
 // Solidity: function safeTransferFrom(address from, address to, uint256 tokenId, bytes _data) returns()
-func (_Store *StoreTransactorSession) SafeTransferFrom0(from common.Address, to common.Address, tokenId *big.Int, _data []byte) (*types.Transaction, error) {
-	return _Store.Contract.SafeTransferFrom0(&_Store.TransactOpts, from, to, tokenId, _data)
+func (_EthNft *EthNftTransactorSession) SafeTransferFrom0(from common.Address, to common.Address, tokenId *big.Int, _data []byte) (*types.Transaction, error) {
+	return _EthNft.Contract.SafeTransferFrom0(&_EthNft.TransactOpts, from, to, tokenId, _data)
 }
 
 // SetApprovalForAll is a paid mutator transaction binding the contract method 0xa22cb465.
 //
 // Solidity: function setApprovalForAll(address operator, bool approved) returns()
-func (_Store *StoreTransactor) SetApprovalForAll(opts *bind.TransactOpts, operator common.Address, approved bool) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "setApprovalForAll", operator, approved)
+func (_EthNft *EthNftTransactor) SetApprovalForAll(opts *bind.TransactOpts, operator common.Address, approved bool) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "setApprovalForAll", operator, approved)
 }
 
 // SetApprovalForAll is a paid mutator transaction binding the contract method 0xa22cb465.
 //
 // Solidity: function setApprovalForAll(address operator, bool approved) returns()
-func (_Store *StoreSession) SetApprovalForAll(operator common.Address, approved bool) (*types.Transaction, error) {
-	return _Store.Contract.SetApprovalForAll(&_Store.TransactOpts, operator, approved)
+func (_EthNft *EthNftSession) SetApprovalForAll(operator common.Address, approved bool) (*types.Transaction, error) {
+	return _EthNft.Contract.SetApprovalForAll(&_EthNft.TransactOpts, operator, approved)
 }
 
 // SetApprovalForAll is a paid mutator transaction binding the contract method 0xa22cb465.
 //
 // Solidity: function setApprovalForAll(address operator, bool approved) returns()
-func (_Store *StoreTransactorSession) SetApprovalForAll(operator common.Address, approved bool) (*types.Transaction, error) {
-	return _Store.Contract.SetApprovalForAll(&_Store.TransactOpts, operator, approved)
+func (_EthNft *EthNftTransactorSession) SetApprovalForAll(operator common.Address, approved bool) (*types.Transaction, error) {
+	return _EthNft.Contract.SetApprovalForAll(&_EthNft.TransactOpts, operator, approved)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 tokenId) returns()
-func (_Store *StoreTransactor) TransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.contract.Transact(opts, "transferFrom", from, to, tokenId)
+func (_EthNft *EthNftTransactor) TransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.contract.Transact(opts, "transferFrom", from, to, tokenId)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 tokenId) returns()
-func (_Store *StoreSession) TransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.Contract.TransferFrom(&_Store.TransactOpts, from, to, tokenId)
+func (_EthNft *EthNftSession) TransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.Contract.TransferFrom(&_EthNft.TransactOpts, from, to, tokenId)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 tokenId) returns()
-func (_Store *StoreTransactorSession) TransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
-	return _Store.Contract.TransferFrom(&_Store.TransactOpts, from, to, tokenId)
+func (_EthNft *EthNftTransactorSession) TransferFrom(from common.Address, to common.Address, tokenId *big.Int) (*types.Transaction, error) {
+	return _EthNft.Contract.TransferFrom(&_EthNft.TransactOpts, from, to, tokenId)
 }
 
-// StoreApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the Store contract.
-type StoreApprovalIterator struct {
-	Event *StoreApproval // Event containing the contract specifics and raw log
+// EthNftApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the EthNft contract.
+type EthNftApprovalIterator struct {
+	Event *EthNftApproval // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -790,7 +790,7 @@ type StoreApprovalIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StoreApprovalIterator) Next() bool {
+func (it *EthNftApprovalIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -799,7 +799,7 @@ func (it *StoreApprovalIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StoreApproval)
+			it.Event = new(EthNftApproval)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -814,7 +814,7 @@ func (it *StoreApprovalIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StoreApproval)
+		it.Event = new(EthNftApproval)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -830,19 +830,19 @@ func (it *StoreApprovalIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StoreApprovalIterator) Error() error {
+func (it *EthNftApprovalIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StoreApprovalIterator) Close() error {
+func (it *EthNftApprovalIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StoreApproval represents a Approval event raised by the Store contract.
-type StoreApproval struct {
+// EthNftApproval represents a Approval event raised by the EthNft contract.
+type EthNftApproval struct {
 	Owner    common.Address
 	Approved common.Address
 	TokenId  *big.Int
@@ -852,7 +852,7 @@ type StoreApproval struct {
 // FilterApproval is a free log retrieval operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
-func (_Store *StoreFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, approved []common.Address, tokenId []*big.Int) (*StoreApprovalIterator, error) {
+func (_EthNft *EthNftFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, approved []common.Address, tokenId []*big.Int) (*EthNftApprovalIterator, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -867,17 +867,17 @@ func (_Store *StoreFilterer) FilterApproval(opts *bind.FilterOpts, owner []commo
 		tokenIdRule = append(tokenIdRule, tokenIdItem)
 	}
 
-	logs, sub, err := _Store.contract.FilterLogs(opts, "Approval", ownerRule, approvedRule, tokenIdRule)
+	logs, sub, err := _EthNft.contract.FilterLogs(opts, "Approval", ownerRule, approvedRule, tokenIdRule)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreApprovalIterator{contract: _Store.contract, event: "Approval", logs: logs, sub: sub}, nil
+	return &EthNftApprovalIterator{contract: _EthNft.contract, event: "Approval", logs: logs, sub: sub}, nil
 }
 
 // WatchApproval is a free log subscription operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
-func (_Store *StoreFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *StoreApproval, owner []common.Address, approved []common.Address, tokenId []*big.Int) (event.Subscription, error) {
+func (_EthNft *EthNftFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *EthNftApproval, owner []common.Address, approved []common.Address, tokenId []*big.Int) (event.Subscription, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -892,7 +892,7 @@ func (_Store *StoreFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *St
 		tokenIdRule = append(tokenIdRule, tokenIdItem)
 	}
 
-	logs, sub, err := _Store.contract.WatchLogs(opts, "Approval", ownerRule, approvedRule, tokenIdRule)
+	logs, sub, err := _EthNft.contract.WatchLogs(opts, "Approval", ownerRule, approvedRule, tokenIdRule)
 	if err != nil {
 		return nil, err
 	}
@@ -902,8 +902,8 @@ func (_Store *StoreFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *St
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StoreApproval)
-				if err := _Store.contract.UnpackLog(event, "Approval", log); err != nil {
+				event := new(EthNftApproval)
+				if err := _EthNft.contract.UnpackLog(event, "Approval", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -927,18 +927,18 @@ func (_Store *StoreFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *St
 // ParseApproval is a log parse operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
-func (_Store *StoreFilterer) ParseApproval(log types.Log) (*StoreApproval, error) {
-	event := new(StoreApproval)
-	if err := _Store.contract.UnpackLog(event, "Approval", log); err != nil {
+func (_EthNft *EthNftFilterer) ParseApproval(log types.Log) (*EthNftApproval, error) {
+	event := new(EthNftApproval)
+	if err := _EthNft.contract.UnpackLog(event, "Approval", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// StoreApprovalForAllIterator is returned from FilterApprovalForAll and is used to iterate over the raw logs and unpacked data for ApprovalForAll events raised by the Store contract.
-type StoreApprovalForAllIterator struct {
-	Event *StoreApprovalForAll // Event containing the contract specifics and raw log
+// EthNftApprovalForAllIterator is returned from FilterApprovalForAll and is used to iterate over the raw logs and unpacked data for ApprovalForAll events raised by the EthNft contract.
+type EthNftApprovalForAllIterator struct {
+	Event *EthNftApprovalForAll // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -952,7 +952,7 @@ type StoreApprovalForAllIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StoreApprovalForAllIterator) Next() bool {
+func (it *EthNftApprovalForAllIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -961,7 +961,7 @@ func (it *StoreApprovalForAllIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StoreApprovalForAll)
+			it.Event = new(EthNftApprovalForAll)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -976,7 +976,7 @@ func (it *StoreApprovalForAllIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StoreApprovalForAll)
+		it.Event = new(EthNftApprovalForAll)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -992,19 +992,19 @@ func (it *StoreApprovalForAllIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StoreApprovalForAllIterator) Error() error {
+func (it *EthNftApprovalForAllIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StoreApprovalForAllIterator) Close() error {
+func (it *EthNftApprovalForAllIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StoreApprovalForAll represents a ApprovalForAll event raised by the Store contract.
-type StoreApprovalForAll struct {
+// EthNftApprovalForAll represents a ApprovalForAll event raised by the EthNft contract.
+type EthNftApprovalForAll struct {
 	Owner    common.Address
 	Operator common.Address
 	Approved bool
@@ -1014,7 +1014,7 @@ type StoreApprovalForAll struct {
 // FilterApprovalForAll is a free log retrieval operation binding the contract event 0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31.
 //
 // Solidity: event ApprovalForAll(address indexed owner, address indexed operator, bool approved)
-func (_Store *StoreFilterer) FilterApprovalForAll(opts *bind.FilterOpts, owner []common.Address, operator []common.Address) (*StoreApprovalForAllIterator, error) {
+func (_EthNft *EthNftFilterer) FilterApprovalForAll(opts *bind.FilterOpts, owner []common.Address, operator []common.Address) (*EthNftApprovalForAllIterator, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -1025,17 +1025,17 @@ func (_Store *StoreFilterer) FilterApprovalForAll(opts *bind.FilterOpts, owner [
 		operatorRule = append(operatorRule, operatorItem)
 	}
 
-	logs, sub, err := _Store.contract.FilterLogs(opts, "ApprovalForAll", ownerRule, operatorRule)
+	logs, sub, err := _EthNft.contract.FilterLogs(opts, "ApprovalForAll", ownerRule, operatorRule)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreApprovalForAllIterator{contract: _Store.contract, event: "ApprovalForAll", logs: logs, sub: sub}, nil
+	return &EthNftApprovalForAllIterator{contract: _EthNft.contract, event: "ApprovalForAll", logs: logs, sub: sub}, nil
 }
 
 // WatchApprovalForAll is a free log subscription operation binding the contract event 0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31.
 //
 // Solidity: event ApprovalForAll(address indexed owner, address indexed operator, bool approved)
-func (_Store *StoreFilterer) WatchApprovalForAll(opts *bind.WatchOpts, sink chan<- *StoreApprovalForAll, owner []common.Address, operator []common.Address) (event.Subscription, error) {
+func (_EthNft *EthNftFilterer) WatchApprovalForAll(opts *bind.WatchOpts, sink chan<- *EthNftApprovalForAll, owner []common.Address, operator []common.Address) (event.Subscription, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -1046,7 +1046,7 @@ func (_Store *StoreFilterer) WatchApprovalForAll(opts *bind.WatchOpts, sink chan
 		operatorRule = append(operatorRule, operatorItem)
 	}
 
-	logs, sub, err := _Store.contract.WatchLogs(opts, "ApprovalForAll", ownerRule, operatorRule)
+	logs, sub, err := _EthNft.contract.WatchLogs(opts, "ApprovalForAll", ownerRule, operatorRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1056,8 +1056,8 @@ func (_Store *StoreFilterer) WatchApprovalForAll(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StoreApprovalForAll)
-				if err := _Store.contract.UnpackLog(event, "ApprovalForAll", log); err != nil {
+				event := new(EthNftApprovalForAll)
+				if err := _EthNft.contract.UnpackLog(event, "ApprovalForAll", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1081,18 +1081,18 @@ func (_Store *StoreFilterer) WatchApprovalForAll(opts *bind.WatchOpts, sink chan
 // ParseApprovalForAll is a log parse operation binding the contract event 0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31.
 //
 // Solidity: event ApprovalForAll(address indexed owner, address indexed operator, bool approved)
-func (_Store *StoreFilterer) ParseApprovalForAll(log types.Log) (*StoreApprovalForAll, error) {
-	event := new(StoreApprovalForAll)
-	if err := _Store.contract.UnpackLog(event, "ApprovalForAll", log); err != nil {
+func (_EthNft *EthNftFilterer) ParseApprovalForAll(log types.Log) (*EthNftApprovalForAll, error) {
+	event := new(EthNftApprovalForAll)
+	if err := _EthNft.contract.UnpackLog(event, "ApprovalForAll", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// StoreRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the Store contract.
-type StoreRoleAdminChangedIterator struct {
-	Event *StoreRoleAdminChanged // Event containing the contract specifics and raw log
+// EthNftRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the EthNft contract.
+type EthNftRoleAdminChangedIterator struct {
+	Event *EthNftRoleAdminChanged // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1106,7 +1106,7 @@ type StoreRoleAdminChangedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StoreRoleAdminChangedIterator) Next() bool {
+func (it *EthNftRoleAdminChangedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1115,7 +1115,7 @@ func (it *StoreRoleAdminChangedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StoreRoleAdminChanged)
+			it.Event = new(EthNftRoleAdminChanged)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1130,7 +1130,7 @@ func (it *StoreRoleAdminChangedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StoreRoleAdminChanged)
+		it.Event = new(EthNftRoleAdminChanged)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1146,19 +1146,19 @@ func (it *StoreRoleAdminChangedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StoreRoleAdminChangedIterator) Error() error {
+func (it *EthNftRoleAdminChangedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StoreRoleAdminChangedIterator) Close() error {
+func (it *EthNftRoleAdminChangedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StoreRoleAdminChanged represents a RoleAdminChanged event raised by the Store contract.
-type StoreRoleAdminChanged struct {
+// EthNftRoleAdminChanged represents a RoleAdminChanged event raised by the EthNft contract.
+type EthNftRoleAdminChanged struct {
 	Role              [32]byte
 	PreviousAdminRole [32]byte
 	NewAdminRole      [32]byte
@@ -1168,7 +1168,7 @@ type StoreRoleAdminChanged struct {
 // FilterRoleAdminChanged is a free log retrieval operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 //
 // Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-func (_Store *StoreFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*StoreRoleAdminChangedIterator, error) {
+func (_EthNft *EthNftFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*EthNftRoleAdminChangedIterator, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1183,17 +1183,17 @@ func (_Store *StoreFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role 
 		newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
 	}
 
-	logs, sub, err := _Store.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+	logs, sub, err := _EthNft.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreRoleAdminChangedIterator{contract: _Store.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
+	return &EthNftRoleAdminChangedIterator{contract: _EthNft.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
 }
 
 // WatchRoleAdminChanged is a free log subscription operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 //
 // Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-func (_Store *StoreFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *StoreRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
+func (_EthNft *EthNftFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *EthNftRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1208,7 +1208,7 @@ func (_Store *StoreFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink ch
 		newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
 	}
 
-	logs, sub, err := _Store.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+	logs, sub, err := _EthNft.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1218,8 +1218,8 @@ func (_Store *StoreFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink ch
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StoreRoleAdminChanged)
-				if err := _Store.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+				event := new(EthNftRoleAdminChanged)
+				if err := _EthNft.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1243,18 +1243,18 @@ func (_Store *StoreFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink ch
 // ParseRoleAdminChanged is a log parse operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 //
 // Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-func (_Store *StoreFilterer) ParseRoleAdminChanged(log types.Log) (*StoreRoleAdminChanged, error) {
-	event := new(StoreRoleAdminChanged)
-	if err := _Store.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+func (_EthNft *EthNftFilterer) ParseRoleAdminChanged(log types.Log) (*EthNftRoleAdminChanged, error) {
+	event := new(EthNftRoleAdminChanged)
+	if err := _EthNft.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// StoreRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the Store contract.
-type StoreRoleGrantedIterator struct {
-	Event *StoreRoleGranted // Event containing the contract specifics and raw log
+// EthNftRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the EthNft contract.
+type EthNftRoleGrantedIterator struct {
+	Event *EthNftRoleGranted // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1268,7 +1268,7 @@ type StoreRoleGrantedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StoreRoleGrantedIterator) Next() bool {
+func (it *EthNftRoleGrantedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1277,7 +1277,7 @@ func (it *StoreRoleGrantedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StoreRoleGranted)
+			it.Event = new(EthNftRoleGranted)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1292,7 +1292,7 @@ func (it *StoreRoleGrantedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StoreRoleGranted)
+		it.Event = new(EthNftRoleGranted)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1308,19 +1308,19 @@ func (it *StoreRoleGrantedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StoreRoleGrantedIterator) Error() error {
+func (it *EthNftRoleGrantedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StoreRoleGrantedIterator) Close() error {
+func (it *EthNftRoleGrantedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StoreRoleGranted represents a RoleGranted event raised by the Store contract.
-type StoreRoleGranted struct {
+// EthNftRoleGranted represents a RoleGranted event raised by the EthNft contract.
+type EthNftRoleGranted struct {
 	Role    [32]byte
 	Account common.Address
 	Sender  common.Address
@@ -1330,7 +1330,7 @@ type StoreRoleGranted struct {
 // FilterRoleGranted is a free log retrieval operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
 // Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-func (_Store *StoreFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*StoreRoleGrantedIterator, error) {
+func (_EthNft *EthNftFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*EthNftRoleGrantedIterator, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1345,17 +1345,17 @@ func (_Store *StoreFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _Store.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+	logs, sub, err := _EthNft.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreRoleGrantedIterator{contract: _Store.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
+	return &EthNftRoleGrantedIterator{contract: _EthNft.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
 }
 
 // WatchRoleGranted is a free log subscription operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
 // Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-func (_Store *StoreFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *StoreRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+func (_EthNft *EthNftFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *EthNftRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1370,7 +1370,7 @@ func (_Store *StoreFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- 
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _Store.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+	logs, sub, err := _EthNft.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1380,8 +1380,8 @@ func (_Store *StoreFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StoreRoleGranted)
-				if err := _Store.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+				event := new(EthNftRoleGranted)
+				if err := _EthNft.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1405,18 +1405,18 @@ func (_Store *StoreFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- 
 // ParseRoleGranted is a log parse operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
 // Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-func (_Store *StoreFilterer) ParseRoleGranted(log types.Log) (*StoreRoleGranted, error) {
-	event := new(StoreRoleGranted)
-	if err := _Store.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+func (_EthNft *EthNftFilterer) ParseRoleGranted(log types.Log) (*EthNftRoleGranted, error) {
+	event := new(EthNftRoleGranted)
+	if err := _EthNft.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// StoreRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the Store contract.
-type StoreRoleRevokedIterator struct {
-	Event *StoreRoleRevoked // Event containing the contract specifics and raw log
+// EthNftRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the EthNft contract.
+type EthNftRoleRevokedIterator struct {
+	Event *EthNftRoleRevoked // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1430,7 +1430,7 @@ type StoreRoleRevokedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StoreRoleRevokedIterator) Next() bool {
+func (it *EthNftRoleRevokedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1439,7 +1439,7 @@ func (it *StoreRoleRevokedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StoreRoleRevoked)
+			it.Event = new(EthNftRoleRevoked)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1454,7 +1454,7 @@ func (it *StoreRoleRevokedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StoreRoleRevoked)
+		it.Event = new(EthNftRoleRevoked)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1470,19 +1470,19 @@ func (it *StoreRoleRevokedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StoreRoleRevokedIterator) Error() error {
+func (it *EthNftRoleRevokedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StoreRoleRevokedIterator) Close() error {
+func (it *EthNftRoleRevokedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StoreRoleRevoked represents a RoleRevoked event raised by the Store contract.
-type StoreRoleRevoked struct {
+// EthNftRoleRevoked represents a RoleRevoked event raised by the EthNft contract.
+type EthNftRoleRevoked struct {
 	Role    [32]byte
 	Account common.Address
 	Sender  common.Address
@@ -1492,7 +1492,7 @@ type StoreRoleRevoked struct {
 // FilterRoleRevoked is a free log retrieval operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //
 // Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-func (_Store *StoreFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*StoreRoleRevokedIterator, error) {
+func (_EthNft *EthNftFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*EthNftRoleRevokedIterator, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1507,17 +1507,17 @@ func (_Store *StoreFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _Store.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+	logs, sub, err := _EthNft.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreRoleRevokedIterator{contract: _Store.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
+	return &EthNftRoleRevokedIterator{contract: _EthNft.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
 }
 
 // WatchRoleRevoked is a free log subscription operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //
 // Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-func (_Store *StoreFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *StoreRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+func (_EthNft *EthNftFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *EthNftRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1532,7 +1532,7 @@ func (_Store *StoreFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- 
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _Store.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+	logs, sub, err := _EthNft.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1542,8 +1542,8 @@ func (_Store *StoreFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StoreRoleRevoked)
-				if err := _Store.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+				event := new(EthNftRoleRevoked)
+				if err := _EthNft.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1567,18 +1567,18 @@ func (_Store *StoreFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- 
 // ParseRoleRevoked is a log parse operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //
 // Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-func (_Store *StoreFilterer) ParseRoleRevoked(log types.Log) (*StoreRoleRevoked, error) {
-	event := new(StoreRoleRevoked)
-	if err := _Store.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+func (_EthNft *EthNftFilterer) ParseRoleRevoked(log types.Log) (*EthNftRoleRevoked, error) {
+	event := new(EthNftRoleRevoked)
+	if err := _EthNft.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// StoreTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the Store contract.
-type StoreTransferIterator struct {
-	Event *StoreTransfer // Event containing the contract specifics and raw log
+// EthNftTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the EthNft contract.
+type EthNftTransferIterator struct {
+	Event *EthNftTransfer // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1592,7 +1592,7 @@ type StoreTransferIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *StoreTransferIterator) Next() bool {
+func (it *EthNftTransferIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1601,7 +1601,7 @@ func (it *StoreTransferIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(StoreTransfer)
+			it.Event = new(EthNftTransfer)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1616,7 +1616,7 @@ func (it *StoreTransferIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(StoreTransfer)
+		it.Event = new(EthNftTransfer)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1632,19 +1632,19 @@ func (it *StoreTransferIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *StoreTransferIterator) Error() error {
+func (it *EthNftTransferIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *StoreTransferIterator) Close() error {
+func (it *EthNftTransferIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// StoreTransfer represents a Transfer event raised by the Store contract.
-type StoreTransfer struct {
+// EthNftTransfer represents a Transfer event raised by the EthNft contract.
+type EthNftTransfer struct {
 	From    common.Address
 	To      common.Address
 	TokenId *big.Int
@@ -1654,7 +1654,7 @@ type StoreTransfer struct {
 // FilterTransfer is a free log retrieval operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
-func (_Store *StoreFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address, tokenId []*big.Int) (*StoreTransferIterator, error) {
+func (_EthNft *EthNftFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address, tokenId []*big.Int) (*EthNftTransferIterator, error) {
 
 	var fromRule []interface{}
 	for _, fromItem := range from {
@@ -1669,17 +1669,17 @@ func (_Store *StoreFilterer) FilterTransfer(opts *bind.FilterOpts, from []common
 		tokenIdRule = append(tokenIdRule, tokenIdItem)
 	}
 
-	logs, sub, err := _Store.contract.FilterLogs(opts, "Transfer", fromRule, toRule, tokenIdRule)
+	logs, sub, err := _EthNft.contract.FilterLogs(opts, "Transfer", fromRule, toRule, tokenIdRule)
 	if err != nil {
 		return nil, err
 	}
-	return &StoreTransferIterator{contract: _Store.contract, event: "Transfer", logs: logs, sub: sub}, nil
+	return &EthNftTransferIterator{contract: _EthNft.contract, event: "Transfer", logs: logs, sub: sub}, nil
 }
 
 // WatchTransfer is a free log subscription operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
-func (_Store *StoreFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *StoreTransfer, from []common.Address, to []common.Address, tokenId []*big.Int) (event.Subscription, error) {
+func (_EthNft *EthNftFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *EthNftTransfer, from []common.Address, to []common.Address, tokenId []*big.Int) (event.Subscription, error) {
 
 	var fromRule []interface{}
 	for _, fromItem := range from {
@@ -1694,7 +1694,7 @@ func (_Store *StoreFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *St
 		tokenIdRule = append(tokenIdRule, tokenIdItem)
 	}
 
-	logs, sub, err := _Store.contract.WatchLogs(opts, "Transfer", fromRule, toRule, tokenIdRule)
+	logs, sub, err := _EthNft.contract.WatchLogs(opts, "Transfer", fromRule, toRule, tokenIdRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1704,8 +1704,8 @@ func (_Store *StoreFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *St
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(StoreTransfer)
-				if err := _Store.contract.UnpackLog(event, "Transfer", log); err != nil {
+				event := new(EthNftTransfer)
+				if err := _EthNft.contract.UnpackLog(event, "Transfer", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1729,9 +1729,9 @@ func (_Store *StoreFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *St
 // ParseTransfer is a log parse operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
-func (_Store *StoreFilterer) ParseTransfer(log types.Log) (*StoreTransfer, error) {
-	event := new(StoreTransfer)
-	if err := _Store.contract.UnpackLog(event, "Transfer", log); err != nil {
+func (_EthNft *EthNftFilterer) ParseTransfer(log types.Log) (*EthNftTransfer, error) {
+	event := new(EthNftTransfer)
+	if err := _EthNft.contract.UnpackLog(event, "Transfer", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

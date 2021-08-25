@@ -7,11 +7,14 @@ RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh linux-headers
 RUN apk add build-base
 
-ADD ./  /go/src/${APP_NAME}/
+ADD ./go.mod  /go/src/${APP_NAME}/
+ADD ./go.sum  /go/src/${APP_NAME}/
 
 WORKDIR /go/src/${APP_NAME}/
 
 RUN go mod download
+
+ADD ./  /go/src/${APP_NAME}/
 
 RUN go build -o /go/bin/${APP_NAME} .
 
